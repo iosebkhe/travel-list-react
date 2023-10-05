@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 
 const Form = ({ onAddItems }) => {
@@ -19,25 +20,34 @@ const Form = ({ onAddItems }) => {
 
   return (
     <form className="add-form" onSubmit={handleSubmit}>
-      <h3>What do you need for your 😍 trip?</h3>
-      <select
-        value={quantity}
-        onChange={(e) => setQuantity(Number(e.target.value))}
-      >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
-          <option value={num} key={num}>
-            {num}
-          </option>
-        ))}
-      </select>
-      <input
-        type="text"
-        placeholder="Item..."
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <button>Add</button>
+      <div className='form-wrapper'>
+        <h3>What do you need for your 😍 trip?</h3>
+        <div className='form-inputs'>
+          <select
+            value={quantity}
+            onChange={(e) => setQuantity(Number(e.target.value))}
+          >
+            {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+              <option value={num} key={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            placeholder="Item..."
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+        <button>Add</button>
+      </div>
     </form>
   );
 };
+
+Form.propTypes = {
+  onAddItems: PropTypes.func
+};
+
 export default Form;

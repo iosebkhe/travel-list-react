@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Logo from "./components/Logo";
 import Form from "./components/Form";
-import TodoList from "./components/TodoList";
 import Stats from "./components/Stats";
+import TravelItems from "./components/TravelItems";
+import "./App.css";
 
 const App = function () {
   const [items, setItems] = useState([]);
@@ -35,7 +36,7 @@ const App = function () {
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <TodoList
+      <TravelItems
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}

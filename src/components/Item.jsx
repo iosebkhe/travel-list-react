@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Item = ({ item, onDeleteItem, onToggleItem }) => {
   return (
     <li>
@@ -12,6 +14,12 @@ const Item = ({ item, onDeleteItem, onToggleItem }) => {
       <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   );
+};
+
+Item.propTypes = {
+  item: PropTypes.object,
+  onDeleteItem: PropTypes.func,
+  onToggleItem: PropTypes.func,
 };
 
 export default Item;

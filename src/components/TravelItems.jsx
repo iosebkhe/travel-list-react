@@ -1,8 +1,8 @@
+import PropTypes from 'prop-types';
 import { useState } from "react";
 import Item from "./Item";
 
-
-const TodoList = ({
+const TravelItems = ({
   items,
   onDeleteItem,
   onToggleItem,
@@ -49,4 +49,11 @@ const TodoList = ({
   );
 };
 
-export default TodoList;
+TravelItems.propTypes = {
+  items: PropTypes.array,
+  onDeleteItem: PropTypes.func,
+  onToggleItem: PropTypes.func,
+  onClearList: PropTypes.func
+};
+
+export default TravelItems;
